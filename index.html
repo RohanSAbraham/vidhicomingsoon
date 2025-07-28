@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidhiMarg | Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Poppins', sans-serif; overflow: hidden; }
+
+    /* Background Gradient */
+    body {
+      background: linear-gradient(135deg, #eef2f3, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Blurry Color Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.7;
+      animation: blobMove 8s infinite;
+    }
+    .blob:nth-child(1) { width: 400px; height: 400px; background: #1A5DBF; top: -100px; left: -100px; animation-duration: 10s; }
+    .blob:nth-child(2) { width: 300px; height: 300px; background: #495057; bottom: -80px; right: -80px; animation-duration: 12s; }
+    @keyframes blobMove {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.1); }
+    }
+
+    /* Glassmorphic Card */
+    .container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      width: 90%; max-width: 500px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Logo */
+    .logo {
+      height: 109px;
+				width: 416px;
+				border-radius: 10px;
+				object-fit: cover;
+    }
+    @keyframes logoPulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* Subtitle */
+    .subtext {
+      font-size: 1rem;
+      color: #495057;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .subtext::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: #1A5DBF;
+      border-radius: 2px;
+      margin: 8px auto 0;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn { from { width: 0; } to { width: 40px; } }
+
+    /* Info Section */
+    .info p {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin: 0.75rem 0;
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeText 1s ease-out 0.5s forwards;
+    }
+    .info a {
+      color: #1A5DBF;
+      text-decoration: none;
+      border-bottom: 1px solid #1A5DBF;
+      padding-bottom: 2px;
+    }
+    @keyframes fadeText { to { opacity: 1; } }
+
+    /* Button */
+    .signup {
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeText 1s ease-out 1s forwards;
+    }
+    .signup button {
+      padding: 0.75rem 2rem;
+      border: none;
+      background: #1A5DBF;
+      background-image: linear-gradient(135deg, #1A5DBF 0%, #6C757D 100%);
+      color: #fff;
+      font-weight: 500;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(26,93,191,0.4);
+    }
+    .signup button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(26,93,191,0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .info p { font-size: 0.8rem; }
+      .subtext { font-size: 0.95rem; }
+      .signup button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Blurry Background Blobs -->
+  <div class="blob"></div>
+  <div class="blob"></div>
+
+  <div class="container">
+    <img src="logo.png" alt="VidhiMarg Logo" class="logo">
+    <div class="subtext">Our platform is on its way</div>
+    <div class="info">
+      <p><strong>What is VidhiMarg?</strong> A unified platform for lawyers to manage cases, clients, documents, and deadlines.</p>
+      
+    </div>
+    <div class="signup">
+      <a href="https://forms.gle/Pp23bS31ZdADrFJG6" target="_blank">
+        <button type="button">Fill Survey &amp; Get Notified</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
